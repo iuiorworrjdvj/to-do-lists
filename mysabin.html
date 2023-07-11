@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><style>li {
+   
+    width: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: auto;
+    color: darkblack;
+ }
+ .remove{
+     background-color: red;
+     color: white;
+     font-style: italic;
+ }
+ .Add{
+     background-color: rgb(10, 224, 10);
+ }
+ div{
+     background-color: rgba(255, 255, 255, 0.801);
+ }
+ input{
+     border-radius: 50px;
+     width: 250px;
+ }
+ body{
+     background-color: lightgrey;
+ }</style>
+ <script>a
+
+
+    function Addclicked() {
+        let mytask=document.getElementById("input");
+        if(mytask.value===''){
+            alert("please provide me  some kind of task that you want to add ");
+        }
+        else{
+            let listitem=document.createElement("li"); 
+            listitem.textContent=mytask.value;
+            let checkbox=document.createElement("input");
+            checkbox.type="checkbox";
+            checkbox.className="checkbox";
+            let remove=document.createElement('button');
+            remove.textContent="Remove";
+            remove.className="remove";
+            listitem.appendChild(checkbox);remove.addEventListener('click', deleteit);
+    
+            document.getElementById("mylist").appendChild(listitem);
+            
+            listitem.appendChild(remove);
+    
+            
+        }
+        mytask.value="";
+    
+    }
+    function deleteit(event){
+    let mylist=event.target.parentNode;
+    mylist.remove();
+    }</script>
+<body>
+    <link rel="stylesheet" href="sabin.css">
+    <script src="sabin.js"></script>
+   <CENter> <h1>To-Do-List</h1></CENter>
+   <center><div>
+    <input type="text  name="input" id="input" >
+    <button type="button" onclick=" Addclicked()" class="Add">Add</button>
+    <ul id="mylist"></ul>
+</div></center>
+</body>
+</html>
